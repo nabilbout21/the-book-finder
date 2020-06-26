@@ -40,13 +40,13 @@ function searchBooks() {
             }
           }
         })        
-
+        let searchTermH1 = `<h2>Your results for:<span> ${searchTerm}</span></h2>`
         let resultsHTML = '<section class="row">'
+        const placeholderImg = './img/book-placeholder.png'
         bookInfos.forEach((info) => {
-
           const resultHTML = `
                 <div class="module">
-                    <a href="${info.infoLink}" target="_blank"><img src="${info.thumbnail}" alt="${info.title}"></a>
+                    <a href="${info.infoLink}" target="_blank"><img src="${!info.thumbnail ? placeholderImg : info.thumbnail}" alt="${info.title}"></a>
                     <div>
                         <h3 id="title">${info.title}</h3>
                         <h4>Author: <span>${info.authors}</span></h4>
@@ -60,7 +60,7 @@ function searchBooks() {
 
        }) 
        resultsHTML += '</section>'
-       searchResultsDiv.innerHTML = resultsHTML
+       searchResultsDiv.innerHTML = searchTermH1 + resultsHTML
     }
     fetchingAPI();
     });
