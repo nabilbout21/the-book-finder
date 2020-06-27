@@ -69,18 +69,20 @@ body {
 }
 
 #wrapper form input {
-    width: 430px;
+    width: 100%;
+    max-width: 430px;
     height: 50px;
-    background-color: var(--light-yellow);
-    border: 1px solid var(--dark-brow);
-    border-radius: 6px;
+    background-color: var(--lighter-yellow);
+    border: none;
     font-size: 1.2rem;
-    padding: 10px;
+    padding: 15px;
     font-family: 'Gentium Book Basic', serif;
     font-style: italic;
     color: var(--brown);
     margin-right: 7px;
-    box-shadow: inset 0px 0px 18px 0px var(--dark-yellow);
+    border-radius: 6px;
+    -webkit-appearance: none;
+
 }
 
 #wrapper form input::placeholder {
@@ -89,9 +91,9 @@ body {
 }
 
 #wrapper form button {
-    flex: 1;
+    width: 60px;
     border-radius: 6px;
-    border: 1px solid var(--dark-brow);
+    border: none;
     background-color: var(--yellow);
     font-family: 'Gentium Book Basic', serif;
     transition: all 0.3s;
@@ -226,5 +228,30 @@ footer a {
 @media (max-width: 800px) {
     #wrapper h1 a {
         font-size: 2.6rem;
+    }
+
+    #search-results h2 {
+        font-size: 1.1rem;
+    }
+    #search-results .row .module {
+        flex-direction: column;
+        text-align: center;
+    }
+    #search-results .row .module div {
+        line-height: 30px;
+    }
+    #search-results .row .module img {
+        margin-bottom: 20px;
+    }
+    #search-results .row .module h2 {
+        margin-bottom: 20px;
+    }
+    #search-results .row .module .info-button {
+        width: 100%;
+        align-self: center;
+        margin-top: 20px;
+    }
+    #wrapper p {
+        font-size: 1rem;
     }
 }
